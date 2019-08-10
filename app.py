@@ -1,13 +1,12 @@
-import datetime
-import os
-import requests
 from flask_restful import Resource, Api
 from flask import Flask, jsonify, render_template
 from tickerRequest import TickerRequest
-import json
 
 app = Flask(__name__)
 api = Api(app)  # api is a collection of objects, where each object contains a specific functionality (GET, POST, etc)
+
+def start():
+    app.run(host='0.0.0.0', port=5000)
 
 @app.route('/finance/api/v1/stocks')
 def AllStockss():
@@ -19,12 +18,14 @@ def AllStockss():
 
 @app.route('/finance/api/v1/stocks/<string:ticker>')
 def Ticker(ticker):
-        return None
+    tickerRequest = TickerRequest()
+    response = tickerRequest.getTicker(ticker)
+    return jsonify(response)
 
 class NewTicker(Resource):
     def post(self, ticker):  # param is pulled from url string
 
-		return None
+	    return None
 
 @app.route('/')
 @app.route('/home')
@@ -38,9 +39,6 @@ def index():
     )
 
 # once we've defined our api functionalities, add them to the master API object
-#api.add_resource(Home, '/home')
-#api.add_resource(AllStocks, '/finance/api/v1/stocks')
-#api.add_resource(Ticker, '/finance/api/v1/stocks/<string:ticker>')
 api.add_resource(NewTicker, '/finance/api/v1/newTicker/<string:ticker>')
 
 if __name__ == '__main__':
