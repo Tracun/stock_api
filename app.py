@@ -43,7 +43,7 @@ api.add_resource(NewTicker, '/finance/api/v1/newTicker/<string:ticker>')
 
 if __name__ == '__main__':
     #app.run(debug=True)
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
 
 ################# Study this case ##########################################
 #REF: https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-2-724ebf04d12 ###############
