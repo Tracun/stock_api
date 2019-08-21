@@ -5,9 +5,6 @@ from tickerRequest import TickerRequest
 app = Flask(__name__)
 api = Api(app)  # api is a collection of objects, where each object contains a specific functionality (GET, POST, etc)
 
-def start():
-    app.run(host='0.0.0.0', port=5000)
-
 @app.route('/finance/api/stocks')
 def AllStockss():
     tickerRequest = TickerRequest()
