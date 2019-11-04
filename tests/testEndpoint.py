@@ -1,7 +1,7 @@
 import requests
 
 api_url_base = 'http://localhost:5000/'
-endPoint = 'finance/api/v1/stocks'
+endPoint = 'finance/api/stocks'
 
 def testHome():
     response = requests.get(api_url_base)
