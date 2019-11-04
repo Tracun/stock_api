@@ -1,42 +1,69 @@
-## The tracun API
-
-# stock-market-API
-
-Introduction
-
-This is a simple API that provide simple quotation of financial market using the googleFinance
-
-Example Request
-Default
-GET url http://tracun.com/home
+# Stock API
+> This is an API that provide simple quotation of financial market using the google Finance.
 
 
-Example Request
+## Running locally
+
+OS X & Linux & Windows:
+
+```sh
+pip install requirements.txt
+python app.py
+```
+
+
+## Tests
+
+```sh
+cd tests
+python testEndpoint.py
+```
+
+## Sample requests
+
+
+**GET**
+
+
+Home
+*  ```/```
+
+
+*  ```/home```
+
+
 Searches for all tickers
-GET url http://tracun.com/finance/api/v1/stocks
+* ```/finance/api/stocks```
 
 
-Example Request
 Searches for a specific ticker
-GET url http://tracun.com/finance/api/v1/stocks/<string:ticker>
+* ```/finance/api/stocks/{string:ticker}```
 
 
-Example Request
+**POST**
+
+
 Save a new ticker
-POST url http://tracun.com/finance/api/v1/newTicker/<string:ticker>
+* ```/finance/api/newTicker/{string:ticker}```
 
-Built With
-Python
 
-## License:
+## Release History
 
-See [LICENSE](LICENSE).
+
+* 0.0.1
+    * Work in progress
+
 
 ## Contributing
-Authors: Lucas Waiteman Bastos - Initial work
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 
+Lucas Waiteman Bastos – [@Tracun](https://twitter.com/tracun) – tracuns@gmail.com
+https://github.com/tracun/
 
+
+1. Fork it (<https://github.com/Tracun/stock_api/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
